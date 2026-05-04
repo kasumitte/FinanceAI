@@ -1,0 +1,12 @@
+.venv/
+assets/
+tests/
+.env
+.env.example
+.git
+.gitignore
+__pycache__/
+README.md
+graphs/
+.pytest_cache/
+.github/

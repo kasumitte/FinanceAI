@@ -1,0 +1,25 @@
+services:
+  db:
+    image: postgres:16
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d dbstats"]
+      interval: 1m
+      timeout: 25s
+      retries: 5
+      start_period: 10s
+    env_file: .env
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  app:
+    build: .
+    env_file: .env
+    depends_on:
+      db:
+        condition: service_healthy
+
+volumes:
+  pgdata:
+  

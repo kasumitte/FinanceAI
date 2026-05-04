@@ -1,0 +1,8 @@
+# Venv and Python
+.venv/
+__pycache__/
+.env
+.pytest_cache/
+
+# Session data
+graphs/
