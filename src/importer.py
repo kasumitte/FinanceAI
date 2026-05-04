@@ -22,7 +22,7 @@ def read_csv(filepath: Path):
     return rows
 
 async def import_transactions(conn_pool: Pool, filepath: Path):
-    logging.info(f"Reading file...")
+    logging.info("Reading file...")
     csv_rows = read_csv(filepath)
     
     error_count = 0

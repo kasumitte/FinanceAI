@@ -97,7 +97,7 @@ class App:
             case "import":
                 file_path = args.file
                 if not os.path.exists(file_path) or os.path.isdir(file_path):
-                    logger.error(f"Path does not exist") 
+                    logger.error("Path does not exist") 
                     return
                 
                 result = await import_transactions(self.pool, Path(file_path)) # type: ignore
@@ -141,7 +141,7 @@ class App:
                     stats = await get_TopTA(self.pool, args.n)
                     self.show_top_transactions(stats)
                 except Exception:
-                    self.console.print(f"No category field to generate top, firstly do 'categorize'", style="bold red")
+                    self.console.print("No category field to generate top, firstly do 'categorize'", style="bold red")
             
             case "list":
                 stats = await get_RawTransactions(self.pool)

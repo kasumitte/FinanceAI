@@ -8,7 +8,7 @@ from src.analytics import get_TopTA, get_category_breakdown
 async def generate_category_chart(conn_pool: Pool, output_path: Path):
     rows = await get_category_breakdown(conn_pool)
     if not rows:
-        logging.warning(f"No data to generate chart")
+        logging.warning("No data to generate chart")
         return False
     
     name = [row["name"] for row in rows]
@@ -28,7 +28,7 @@ async def generate_category_chart(conn_pool: Pool, output_path: Path):
 async def generate_TopTransactions_chart(conn_pool: Pool, output_path: Path, top_n: int):
     rows = await get_TopTA(conn_pool, top_n)
     if not rows:
-        logging.warning(f"No data to generate chart")
+        logging.warning("No data to generate chart")
         return False
     
     name = [row["description"] for row in rows]

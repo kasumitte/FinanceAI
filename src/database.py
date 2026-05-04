@@ -33,7 +33,7 @@ async def save_transaction(conn_pool: asyncpg.Pool, description: str, amount: fl
                                 VALUES ($1, $2, $3, $4) """, description, amount, datetime.now(), date)
         return True
     except asyncpg.PostgresError:
-        logging.error(f"Database Error")
+        logging.error("Database Error")
         return False
     
 async def get_RawTransactions(conn_pool: asyncpg.Pool):

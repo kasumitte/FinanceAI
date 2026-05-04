@@ -55,10 +55,10 @@ async def get_AIResponse(client: AsyncOpenAI, conn_pool: Pool):
             await update_TransactionCategory(conn_pool, cat.category, cat.transaction_id) 
         
     except RateLimitError:
-        logging.error(f"Rate limit exceeded")
+        logging.error("Rate limit exceeded")
         raise
     except AuthenticationError:
-        logging.error(f"AI Authentication error occurred")
+        logging.error("AI Authentication error occurred")
         raise
     except ValidationError as e:
         for error in e.errors():
