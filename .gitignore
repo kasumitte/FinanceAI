@@ -6,3 +6,4 @@ __pycache__/
 
 # Session data
 graphs/
+financeai.egg-info/

@@ -16,5 +16,8 @@ async def main():
     app = App(pool=pool, client=client, outpath=config.graph_path)
     await app.run()
     
-if __name__ == "__main__":
+def run():
     asyncio.run(main())
+
+if __name__ == "__main__":
+    run()

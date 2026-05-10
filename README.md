@@ -22,5 +22,5 @@ uv sync
 docker-compose up -d db
 
 # 4. Run commands
-uv run python setup.py {your command from list}
+uv run finance {your command from list}
 ```
